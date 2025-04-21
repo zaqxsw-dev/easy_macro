@@ -2,6 +2,12 @@
 name = "easy_macro"
 version = "0.1.0"
 edition = "2021"
+description = "Easy macro collection"
+rust-version = "1.56"
+license = "MIT"
+exclude = ["/.github", "/tests", "/.git", ".*"]
+categories = ["macro"]
+keywords = ["macro", "builder"]
 
 [dependencies]
 proc-macro2 = "1.0"
