@@ -9,11 +9,20 @@ use syn::{parse_macro_input, spanned::Spanned, DeriveInput};
 /// for a fluent API to set values for the fields.
 ///
 /// # Example
-/// ```rust
+/// ```
 /// #[derive(EasyBuilder)]
 /// struct MyStruct {
 ///     field1: i32,
 ///     field2: String,
+/// }
+///
+/// impl Default for MyStruct {
+///     fn default() -> Self {
+///         Self {
+///             field1: 22,
+///             field2: String::from("pewpew")
+///         }
+///     }
 /// }
 ///
 /// let mut instance = MyStruct::default();
