@@ -3,6 +3,22 @@ use proc_macro::TokenStream;
 use quote::quote;
 use syn::{parse_macro_input, spanned::Spanned, DeriveInput};
 
+/// A custom derive macro to implement a builder pattern for structs.
+///
+/// This macro generates setter methods for each field in the struct, allowing
+/// for a fluent API to set values for the fields.
+///
+/// # Example
+/// ```rust
+/// #[derive(EasyBuilder)]
+/// struct MyStruct {
+///     field1: i32,
+///     field2: String,
+/// }
+///
+/// let mut instance = MyStruct::default();
+/// instance.set_field1(42).set_field2("Hello".into());
+/// ```
 #[proc_macro_derive(EasyBuilder)]
 pub fn easybuilder_derive(input: TokenStream) -> TokenStream {
     let input = parse_macro_input!(input as DeriveInput);
