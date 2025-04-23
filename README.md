@@ -72,6 +72,8 @@ Just add new dependencie in your Cargo.toml file.
 <!-- USAGE EXAMPLES -->
 ## Usage
 
+### Builder pattern implementation
+
 ```rust
 use easy_macro::EasyBuilder;
 
